@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>input</h1>
+    <hr>
+
+    <input type="text" name="sousou"  id="s">
+
+    <hr>
+    <button onclick="selectAll()">全选</button>
+    <button onclick="copyAll()">全选复制</button>
+    <button class="btn" data-clipboard-target="#content">复制(clip)</button>
+    <br>
+    <textarea name="weibo" id="content" cols="50" rows="20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque provident dignissimos vitae recusandae, quae tempore necessitatibus, id labore officia nesciunt, aliquam iure unde minima amet impedit magnam libero cum maxime a nisi adipisci obcaecati omnis. Accusamus, modi voluptatem. Voluptate dolore provident, cum sequi pariatur modi repudiandae doloremque veniam corrupti voluptatem repellendus dignissimos. Eligendi voluptatum ut ipsum iusto similique quae, repudiandae repellat omnis minima ipsa expedita dignissimos nisi id consectetur a sequi doloremque quidem eveniet porro, libero excepturi rerum fuga animi iure. Repellat aperiam ea quis ipsa odio saepe beatae magni voluptate. Maiores aliquid quod voluptate aut obcaecati ipsum alias quidem!</textarea>
+
+    <script src="./dist/clipboard.min.js"></script>
+    <script>
+        s.focus();
+
+        function selectAll(){
+            content.select();
+        }
+        function copyAll(){
+            // 判断是否是IE
+            if (window.clipboardData) {
+                // IE
+                clipboardData.setData('text', content.value);
+                alert('已复制到剪切板!');
+            } else {
+                // 非IE
+                content.select();
+                alert('请按 Ctrl + C 复制!');
+            }
+        }
+
+        var clipboard = new ClipboardJS('.btn');
+        // console.log(clipboard);
+
+        clipboard.on('success', function(e){
+            alert('已复制到剪切板!(clipboard)');
+            console.log(e);
+        });
+    </script>
+    
+</body>
+</html>
