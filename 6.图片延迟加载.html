@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <style type="text/css">
+        #imglist img{
+            width: 300px;
+            height: 200px;
+            background: url('./imgs/loading.gif') no-repeat 50% 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>图片延迟加载</h1>
+    <hr>
+
+    <div id="imglist">
+        <img data-src="./imgs/mm016.jpg">
+        <img data-src="./imgs/mm017.jpg">
+        <img data-src="./imgs/mm018.jpg">
+        <img data-src="./imgs/mm019.jpg">
+        <img data-src="./imgs/mm020.jpg">
+        <img data-src="./imgs/mm021.jpg">
+        <img data-src="./imgs/mm022.jpg">
+        <img data-src="./imgs/mm023.jpg">
+        <img data-src="./imgs/mm024.jpg">
+        <img data-src="./imgs/mm025.jpg">
+        <img data-src="./imgs/mm026.jpg">
+        <img data-src="./imgs/mm027.jpg">
+        <img data-src="./imgs/mm028.jpg">
+        <img data-src="./imgs/mm029.jpg">
+        <img data-src="./imgs/mm030.jpg">
+    </div>
+
+
+    <script>
+        setTimeout(function(){
+            var imgs = document.getElementById('imglist').getElementsByTagName('img');
+            for (var i = 0; i < imgs.length; i++) {
+                imgs[i].src = imgs[i].getAttribute('data-src');
+            }
+        },2000);
+    </script>
+</body>
+</html>

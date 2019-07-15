@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>table</h1>
+    <hr>
+
+    <table width="800" border="1" cellspacing="0" cellpadding="5" id="tab">
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>班期</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>悦悦</td>
+            <td>18</td>
+            <td>s88</td>
+            <td>
+                <button onclick="deleteData(this)">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>静静</td>
+            <td>19</td>
+            <td>s90</td>
+            <td>
+                <button onclick="deleteData(this)">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>艳艳</td>
+            <td>28</td>
+            <td>s8</td>
+            <td>
+                <button onclick="deleteData(this)">删除</button>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <hr>
+    <br>
+    <form action="1.php" method="post" name="myform" onsubmit="return addData()">
+         姓名: <input type="text" name="name"><br>
+        年龄: <input type="text" name="age"><br>
+        班期: <input type="text" name="grade"><br>
+        <button type="submit">添加</button>
+    </form>
+
+
+
+    <script>
+        // 无刷新删除
+        function deleteData(obj){
+            var table = document.getElementById('tab');
+            var index = obj.parentNode.parentNode.rowIndex;
+            // console.log(obj.parentNode.parentNode.rowIndex);
+            table.deleteRow(index);
+        }
+
+        // 无刷新添加
+        function addData(){
+             var name = document.myform.name.value;
+            var age = document.myform.age.value;
+            var grade = document.myform.grade.value;
+            var table = document.getElementById('tab');
+
+            // 给表格添加数据
+            var index = table.rows.length;
+            // console.log(index);
+            var tr = table.insertRow(index);
+            // console.log(tr);
+            tr.insertCell(0).innerHTML = index;
+            tr.insertCell(1).innerHTML = name;
+            tr.insertCell(2).innerHTML = age;
+            tr.insertCell(3).innerHTML = grade;
+            tr.insertCell(4).innerHTML = '<button onclick="deleteData(this)">删除</button>';
+            return false;
+        }
+    </script>
+</body>
+</html>

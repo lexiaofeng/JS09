@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>节点访问-节点属性</h1>
+
+     <ul id="books" title="这是一个书单"><!--8888-->
+        <li>程序员必看书单</li>
+        <li>第一阶段:</li>
+        <li>《细说php》</li>123456789<li id="my">《MySQL必知必会》</li><!--6666666666--><li>《javascript权威指南》</li>
+        <li>第二阶段:</li>
+        <li>《教你怎么不生气》</li>
+        <li>《佛经》</li>
+        <li>《老子》</li>
+        <li>《沉默的愤怒》</li>
+        <li>第三阶段:</li>
+        <li>《颈椎病康复指南》</li>
+        <li>《腰椎间盘突出日常护理》</li>
+        <li>《高血压降压宝典》</li>
+        <li>《精神病症状学》</li>
+        <li>第四阶段:</li>
+        <li>《活着》</li>
+    </ul>
+
+
+    <script>
+        var books = document.getElementById('books');
+        console.dir(document);
+        console.dir(books);
+        console.dir(books.getAttributeNode('title'));
+
+        console.dir(books.childNodes);
+        console.dir(books.children.length);
+
+         console.dir(books.firstChild);
+        console.dir(books.lastChild);
+
+        console.dir(books.parentNode);
+        console.dir(books.parentElement);
+
+        console.log(my);
+        console.log(my.previousSibling);
+        console.log(my.nextSibling);
+
+         console.log('document: nodeName', document.nodeName);
+        console.log('document: nodeValue', document.nodeValue);
+        console.log('document: nodeType', document.nodeType);
+
+        console.log('books: nodeName', books.nodeName);
+        console.log('books: nodeValue', books.nodeValue);
+        console.log('books: nodeType', books.nodeType);
+
+
+    </script>
+    
+</body>
+</html>
