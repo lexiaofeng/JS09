@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>获取属性节点</h1>
+    <hr>
+
+    <img id="myimg" src="./imgs/mm016.jpg" alt="MM016" width="600" height="300" loadpic="我也不知道" data-img="66666">
+    
+
+    <script>
+        console.log(myimg.src);
+        console.log(myimg.getAttribute('src'));
+        console.log(myimg.getAttributeNode('src').nodeValue);
+
+        console.log(myimg.loadpic);
+        console.log(myimg.getAttribute('loadpic'));
+
+        console.log(myimg.getAttribute('data-img'));
+        console.log(myimg.getAttributeNode('data-img').nodeValue);
+
+    </script>
+</body>
+</html>

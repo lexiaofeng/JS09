@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- 基底标签 -->
+    <base href="http://www.bilibili.com" target="_blank">
+</head>
+<body>
+    <h1>form</h1>
+    <hr>
+
+    <form action="1.php" name ="myform"  id="hh">
+        username: <input type="text" name="username" value="54321">
+        <button type="submit">提交</button>
+        <button type="reset">重置</button>
+    </form>
+
+    <hr>
+    <button onclick="document.myform.submit()">提交(JS)</button>
+    <button onclick="document.myform.reset()">重置(JS)</button>
+
+
+
+    <button form="hh">提交(HTML5)</button>
+
+
+    <hr>
+    <a href="../js01/index.html">去js 01</a>
+
+</body>
+</html>
